@@ -38,3 +38,5 @@ Windows 不做可信或自签名；macOS 保留 Apple Silicon 所需 ad-hoc 签�
 用户可见名称统一为 Routilet、Companion、Observer、Exam Kit。目标仓库名为 routilet、companion、observer、exam-kit，npm 目标为 @routilet/ 同名包。现有仓库与已发布包暂不重命名；待各项目迁移验收后制定兼容计划，不破坏已安装用户。Routilet 的开发不阻断 Observer 当前开发。
 
 本文件是组织级共同决策的入口；具体实现及阶段验收以 [Routilet 路线图](https://github.com/Routilet/routilet/blob/main/docs/roadmap.md) 为准。修改共同决策应说明原因、影响及兼容策略，不在单个应用中悄然改变。
+
+当前可独立分配的设计及技术预研见 [并行任务交接](handoffs/README.md)。
