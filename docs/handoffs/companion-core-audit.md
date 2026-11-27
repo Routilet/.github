@@ -1,6 +1,8 @@
 # 任务 E：Companion 业务层审计
 
-优先级：P1，可选。执行仓库：[Routilet/accoding-companion](https://github.com/Routilet/accoding-companion)。待分配，可与技术实验及产品设计并行。
+**状态：暂缓。** 原 Node 渐进重构目标已被文件优先的 Go 重构替代。后续以产品原型确认后的接口、存储及兼容审计为准；以下仅作历史参考。
+
+原优先级：P1，可选。执行仓库：[Routilet/accoding-companion](https://github.com/Routilet/accoding-companion)。待分配，可与技术实验及产品设计并行。
 
 ## 目标
 
