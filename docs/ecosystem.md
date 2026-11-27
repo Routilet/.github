@@ -9,11 +9,19 @@ Routilet 是轻量桌面应用管理器与统一发行入口，不是 Companion 
 | 项目 | 产品职责 | 当前仓库 / npm 包 |
 | --- | --- | --- |
 | Routilet | 应用发现、安装、更新、回退、启动、运行环境 | routilet / 目标 @routilet/routilet（尚未发布） |
-| Companion | 课程、题目、测试与 OJ 提交 | accoding-companion / @routilet/accoding-companion |
+| Companion | 文件优先的本地 C/C++ 编程辅助：测试、资源、提交源码准备 | accoding-companion / @routilet/accoding-companion |
 | Observer | 直观呈现程序执行，替代 printf 调试 | c-observer / @routilet/c-observer |
 | Exam Kit | 函数资源、脚手架、手册 | c-exam-kit / @routilet/c-exam-kit |
 
 各项目独立仓库、版本、构建、测试。用户可只安装任一应用；卸载一个应用不能破坏另一个应用的必要功能。两者都安装时可通过明确的接口协作；例如 Companion 将观察会话交给 Observer，后者创建独立窗口。没有 Observer 时仍可正常使用 Companion 的本地评测等功能。管理器无需一直驻留；正在运行的应用仍须得到安装快照保护。应用间调用协议尚待设计。
+
+## Companion 新一代产品边界（2026-11-27 修订）
+
+- 普通本地 C/C++ 文件是主体，打开单文件自动打开所属文件夹并选中；无需登录、工作区初始化或题目绑定。尊重外部编辑、文件组织及用户数据所有权。
+- 默认新建带 Exam Kit 头文件的 C 源文件；已有源码不擅自修改。测试、手册、独立提交源码准备均可离线完成。Observer 仍为独立可选应用。
+- 平时练习使用 Accoding、考试使用另一离线平台；OJ 不再属于本地核心。未来可由 Routilet 安装专用 OJ 扩展，但本轮不设计协议、不实现扩展管理或 OJ 插件，不影响现有发行版的 OJ 能力。
+- 先需求与交互原型、再接口与数据、最后 Go 实现；旧版继续可用。原 Node WebView 实验取消，相关旧路线不再作为新 Companion 的前置条件。Routilet 总体路线图中旧阶段 06 的 TS/Node 前提由本决策替代，待其负责人协调更新，不改变正在执行的阶段。
+- 详细阶段与验收以 [Companion 重构路线图](https://github.com/Routilet/accoding-companion/blob/main/docs/companion-next-roadmap.md)（独立 PR 审核后生效）为准。
 
 ## 分发与运行环境
 
@@ -27,7 +35,7 @@ Routilet 是轻量桌面应用管理器与统一发行入口，不是 Companion 
 
 以 Windows 11 amd64、macOS Apple Silicon 为新桌面版本的正式支持目标。不主动适配 Windows 10、Intel Mac、Windows ARM64、Linux 或其他旧平台；这不追溯取消旧版已有支持。使用系统 WebView（Windows Evergreen WebView2、macOS WKWebView），不捆绑 Chromium、不固定或自动安装 WebView2、不维护完整 TUI 兼容回退。实际遇到缺失时提供微软官方安装说明。
 
-Go 应用采用已通过真机实验的 Wails v3 + Web 前端方向；Companion 保留 TypeScript/Node.js 业务核心，具体窗口外壳尚待确定，不因统一界面重写后端。保留有独立价值的 CLI。统一设计语言、系统字体、深浅色、状态表达、基本操作与错误提示；不提前建设公共组件库。
+新一代 Companion、Observer、Routilet 采用已通过 Observer 真机实验的 Wails v3 + Go 后端 + Web 前端方向。Companion 重构源于产品职责变化，而非单纯统一界面；旧版 TypeScript/Node.js 保留供兼容与业务参考。保留有独立价值的 CLI。统一设计语言、系统字体、深浅色、状态表达、基本操作与错误提示；不提前建设公共组件库。
 
 Windows 不做可信或自签名；macOS 保留 Apple Silicon 所需 ad-hoc 签名，不做 Developer ID、公证及付费签名服务。未公证软件可能触发 Gatekeeper；提供可信来源的单应用授权说明，不要求用户关闭全局安全机制。只在实际分发遭遇显著障碍时重新评估。
 

@@ -4,9 +4,9 @@
 
 | 任务 | 优先级 | 执行仓库 | 交付形式 |
 | --- | --- | --- | --- |
-| [Companion GUI 技术实验](companion-gui-probe.md) | P0 | accoding-companion | 隔离实验、双平台产物、报告 |
+| [Companion GUI 技术实验](companion-gui-probe.md) | 取消（新方向替代） | accoding-companion | 不再执行 |
 | [Companion 产品设计](companion-product.md) | P0 | accoding-companion | 设计文档、静态或交互原型 |
-| [Companion 业务层审计](companion-core-audit.md) | P1，可选 | accoding-companion | 审计及渐进重构建议 |
+| [Companion 业务层审计](companion-core-audit.md) | 暂缓 | accoding-companion | 后续按 Go 重构路线图审计 |
 | [Routilet GUI 设计](routilet-gui-design.md) | P1，可选 | routilet | 设计文档、原型 |
 | [公共视觉规范](visual-guidelines.md) | P1，可与上一项合并 | .github | 简洁规范草案 |
 
@@ -14,7 +14,7 @@
 
 ## 并行边界
 
-技术实验与产品设计独立；业务审计可同时进行，但正式接口设计应等待产品需求和实验结论。管理器 GUI 原型不依赖阶段 01 代码，也不能改动阶段 01 迁移分支。视觉规范可与界面设计同步，先草案、后协调，不阻塞既有 Observer 开发。
+Companion 先完成文件优先的产品设计和模拟原型，再经人工审核进入接口与存储设计；旧 Node 实验取消，业务审计暂缓。管理器 GUI 原型不依赖阶段 01 代码，也不能改动阶段 01 迁移分支。视觉规范可与界面设计同步，先草案、后协调，不阻塞既有 Observer 开发。
 
 所有执行者在各自独立分支工作，提交 PR 供维护者审核。未获批准不合并、不发布、不修改其他项目；避免跨任务修改同一文件。原型仅使用模拟数据。交付时说明实际提交、结果、限制及待决定事项。
 

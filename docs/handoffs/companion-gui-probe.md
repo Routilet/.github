@@ -1,6 +1,8 @@
 # 任务 C：Companion GUI 最小技术实验
 
-优先级：P0。执行仓库：[Routilet/accoding-companion](https://github.com/Routilet/accoding-companion)。待分配，独立于 Routilet 阶段 01 和 Companion 产品设计。
+**状态：取消。** 2026-11-27 新一代 Companion 决定采用 Go 本地核心 + Wails，暂不开发 OJ 插件；本历史交接不再执行，不要求实验 PR、构建或真机验收。以下保留原任务供追溯。
+
+原优先级：P0。执行仓库：[Routilet/accoding-companion](https://github.com/Routilet/accoding-companion)。待分配，独立于 Routilet 阶段 01 和 Companion 产品设计。
 
 ## 目标
 
